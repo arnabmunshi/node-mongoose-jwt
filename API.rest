@@ -1,0 +1,32 @@
+@host = http://localhost:3000
+
+### 
+GET {{host}}/api/v1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTQyNzcyNjYsImV4cCI6MTYxNDI4MDg2NiwiYXVkIjoiNjAzN2RhNzc4ZWEyZmMyZTQ0NTljMTdmIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.jofWy5eqKnWht5CAEd7LJEzVEyJYx2cHUFvqmt9jUYc
+
+### User Registration
+POST {{host}}/api/v1/auth/user/registration HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Arnab",
+    "email": "arnab@gmail.com",
+    "password": "12345678"
+}
+
+### User Login
+POST {{host}}/api/v1/auth/user/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "arnab@gmail.com",
+    "password": "12345678"
+}
+
+### User Logout
+POST {{host}}/api/v1/auth/user/logout HTTP/1.1
+content-type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTQyNzczODAsImV4cCI6MTYxNDI4MDk4MCwiYXVkIjoiNjAzN2RhNzc4ZWEyZmMyZTQ0NTljMTdmIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.H0X0aO2slWnrUvjGCPkJBlRnrK4JQCBkkG-8Rl_Gkuo"
+}
